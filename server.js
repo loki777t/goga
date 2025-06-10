@@ -7,18 +7,18 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static frontend files
+
 app.use(express.static(path.join(__dirname)));
 
 let tasks = [];
 let nextId = 1;
 
-// Get all tasks
+
 app.get('/tasks', (req, res) => {
   res.json(tasks);
 });
 
-// Add a new task
+
 app.post('/tasks', (req, res) => {
   const { text } = req.body;
   if (!text || text.trim() === '') {
@@ -29,7 +29,7 @@ app.post('/tasks', (req, res) => {
   res.status(201).json(task);
 });
 
-// Update a task (toggle completed)
+
 app.put('/tasks/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const task = tasks.find(t => t.id === id);
@@ -45,7 +45,7 @@ app.put('/tasks/:id', (req, res) => {
   res.json(task);
 });
 
-// Delete a task
+
 app.delete('/tasks/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = tasks.findIndex(t => t.id === id);

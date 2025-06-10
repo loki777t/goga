@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let tasks = [];
 
-  // Fetch tasks from backend
+ 
   async function fetchTasks() {
     try {
       const res = await fetch('http://localhost:3000/tasks');
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Render tasks to the list
   function renderTasks() {
     taskList.innerHTML = '';
     tasks.forEach((task) => {
@@ -44,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Add new task
   async function addTask() {
     const text = taskInput.value.trim();
     if (text === '') return;
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Toggle task completion
   async function toggleTaskCompletion(id, completed) {
     try {
       const res = await fetch(`http://localhost:3000/tasks/${id}`, {
@@ -85,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Delete task
+  
   async function deleteTask(id) {
     try {
       const res = await fetch(`http://localhost:3000/tasks/${id}`, {
