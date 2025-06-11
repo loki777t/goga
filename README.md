@@ -27,5 +27,5 @@
 
 Все данные хранятся в памяти сервера и будут потеряны при перезапуске.
 
-#  Ссылка на github pages
+#  Ссылка на github pages:
 https://github.com/loki777t/To-Do-List/settings/pages
